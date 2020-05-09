@@ -42,10 +42,9 @@ class EmployeesController < ApplicationController
         render xml: employees.as_json(except: [:created_at, :updated_at], root: true, include: {department: {except: [:created_at, :updated_at]}})
     end
     
-    
     def show
-        @employee = Employee.find(params[:id])
-         render xml: @employee.as_json
+        employee = Employee.find(params[:id])
+        render xml: employee.as_json
     end
     
     private
