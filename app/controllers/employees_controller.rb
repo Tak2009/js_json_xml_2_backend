@@ -36,22 +36,18 @@ class EmployeesController < ApplicationController
     #     render xml: employees.as_json(except: [:created_at, :updated_at], root: true, include: :department )
     # end
 
-    # want to include the reference field with selected fields
+    # want to include the reference field with selected fields. from the department table, showing only some columns 
     def index
         employees = Employee.all
         render xml: employees.as_json(except: [:created_at, :updated_at], root: true, include: {department: {except: [:created_at, :updated_at]}})
     end
     
-    # here, i am trying to user a show view and hence @employee is needed to pass this to the view file
+    
     def show
-        render xml: @employee.as_json
+        @employee = Employee.find(params[:id])
+         render xml: @employee.as_json
     end
-
-    # def show
-    #     @employee = Employee.find(params[:id])
-    #     render json: @employee
-    # end
-
+    
     private
 
 	def employee_params
