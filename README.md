@@ -22,3 +22,9 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+reference1
+https://engineering.instawork.com/when-xml-beats-json-ui-layouts-53c7f1d3fdb7
+
+reference2
+https://medium.com/@pjbelo/building-an-xml-api-with-rails-79379b305a6
